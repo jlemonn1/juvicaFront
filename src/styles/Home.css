@@ -1,0 +1,10 @@
+/* src/styles/Home.css */
+
+.work-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas */
+    gap: 2px; /* Espacio entre las tarjetas */
+    padding-left: 4px; /* Espaciado alrededor */
+    padding-right: 4px;
+}

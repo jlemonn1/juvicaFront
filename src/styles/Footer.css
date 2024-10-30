@@ -1,0 +1,39 @@
+/* Footer.css */
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto; /* Empuja el footer al final del contenedor principal */
+}
+
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    color: white;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #cccccc; /* Cambia el color al pasar el mouse */
+}
+
+.footer-text {
+    font-size: 14px;
+    margin-top: 10px;
+}
