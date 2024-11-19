@@ -7,13 +7,13 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
                 <div className="social-icons">
-                    <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/juvicamove" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className="icon" />
                     </a>
-                    <a href="mailto:tu_correo@example.com">
+                    <a href="mailto:juvicamove@gmail.com">
                         <FaEnvelope className="icon" />
                     </a>
-                    <a href="https://www.tiktok.com/@tu_usuario" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.tiktok.com/@juvicamove" target="_blank" rel="noopener noreferrer">
                         <FaTiktok className="icon" />
                     </a>
                 </div>

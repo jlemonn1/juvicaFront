@@ -2,15 +2,17 @@ import React, { createContext, useEffect, useState } from 'react';
 
 export const TrabajoContext = createContext();
 
-const TrabajoProvider = ({ children }) => {
+const TrabajoProvider = ({ children, config}) => {
     const [trabajos, setTrabajos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const apiUrl = config.apiUrl;
+
     useEffect(() => {
         const fetchTrabajos = async () => {
             try {
-                const response = await fetch('http://localhost:8080/api/trabajos'); // Ajusta la URL según tu configuración
+                const response = await fetch(`${apiUrl}/api/trabajos`);
                 if (!response.ok) {
                     throw new Error('Error al obtener trabajos');
                 }
@@ -26,8 +28,22 @@ const TrabajoProvider = ({ children }) => {
         fetchTrabajos();
     }, []);
 
+    const obtenerTrabajoPorId = async (id) => {
+        try {
+            const response = await fetch(`${apiUrl}/api/trabajos/${id}`);
+            if (!response.ok) {
+                throw new Error('Error al obtener el trabajo');
+            }
+            const trabajo = await response.json();
+            return trabajo;
+        } catch (err) {
+            setError(err.message);
+            return null;
+        }
+    };
+
     return (
-        <TrabajoContext.Provider value={{ trabajos, loading, error }}>
+        <TrabajoContext.Provider value={{ trabajos, loading, error, obtenerTrabajoPorId }}>
             {children}
         </TrabajoContext.Provider>
     );

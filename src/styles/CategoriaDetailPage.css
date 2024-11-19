@@ -1,0 +1,30 @@
+/* src/styles/CategoryDetailPage.css */
+
+.work-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas */
+    gap: 2px; /* Espacio entre las tarjetas */
+    padding-left: 4px; /* Espaciado alrededor */
+    padding-right: 4px;
+}
+
+.category-image {
+    position: relative;
+}
+
+.category-image__img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5; /* Opacidad de la imagen */
+    object-fit: cover;
+}
+
+.category-image__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}

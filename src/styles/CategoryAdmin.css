@@ -1,0 +1,110 @@
+/* CategoryAdmin.css */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .category-admin {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    text-align: left;
+    font-weight: 400;
+  }
+  
+  .create-category, .edit-category, .category-list {
+    margin-bottom: 20px;
+   
+  }
+  .icon:hover {
+    color: darkred;  /* Change color on hover */
+  }
+  
+  
+  input[type="text"], input[type="file"], textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0; /* Ajuste de margen */
+    padding: 8px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  button:hover {
+    background-color: #666;
+  }
+  
+  .category-item {
+    margin-bottom: 10px;
+  }
+  
+  .category-item img {
+    max-width: 100px;
+    margin-top: 10px;
+  }
+  
+  .delete-confirmation {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+
+/* Estilos para el campo select (opciones) */
+select {
+  display: block;
+  width: 100%;
+  margin: 10px 0; /* Espaciado entre campos */
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilos para las opciones dentro del select */
+select option {
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Estilos para el campo de comentario largo (textarea) */
+textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0; /* Espaciado entre campos */
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+  height: 120px;
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+}

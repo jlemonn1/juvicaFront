@@ -1,46 +1,38 @@
-import React, { useContext, useEffect, useStatem, useState} from 'react';
+// HomePage.js
+import React, { useEffect, useState, useContext } from 'react';
 import WorkCard from '../components/WorkCard';
-import { TrabajoContext } from '../context/TrabajoContext';
-import '../styles/Home.css';
 import { useNavigate } from 'react-router-dom';
-
-// Luego dentro del componente HomePage
-
-
+import { TrabajoContext } from '../context/TrabajoContext'; // Asegúrate de ajustar la ruta según sea necesario
+import '../styles/Home.css';
 
 const HomePage = () => {
-    const { trabajos, loading, error } = useContext(TrabajoContext);
+    const { trabajos, loading, error } = useContext(TrabajoContext); // Obtiene el contexto
     const [activeIndex, setActiveIndex] = useState(null);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveIndex(parseInt(entry.target.getAttribute('data-id')));
-                }
-            });
-        }, {
-            threshold: 0.5, // Cambia a 0.5 para que el 50% de la tarjeta esté visible
-        });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Deja de observar para evitar recargas innecesarias
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
         const cards = document.querySelectorAll('.work-card');
-
-        cards.forEach((card) => {
-            observer.observe(card);
-        });
+        cards.forEach((card) => observer.observe(card));
 
         return () => {
-            cards.forEach((card) => {
-                observer.unobserve(card);
-            });
+            cards.forEach((card) => observer.unobserve(card));
         };
     }, [trabajos]);
 
-    if (loading) {
-        return <div>Cargando...</div>;
-    }
+    // Muestra un mensaje de carga o de error si es necesario
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -48,18 +40,24 @@ const HomePage = () => {
 
     return (
         <div className="work-card-container">
-            {trabajos.map((trabajo, index) => (
-                <WorkCard
-                    key={trabajo.id}
-                    id={trabajo.id}
-                    nombre={trabajo.nombre}
-                    imgUrl={trabajo.listaImagenes[0]}
-                    onSelect={(id) => navigate(`/trabajo/${id}`)}
-                    className={activeIndex === trabajo.id ? 'active' : ''} // Se puede usar para cambiar estilos si es necesario
-                    data-id={trabajo.id} // Agregar un atributo de datos para usar en el observer
-                />
-            ))}
+            {loading ? (
+                <div className="spinner-overlay">
+                    {/* Add spinner content here */}
+                </div>
+            ) : (
+                trabajos.map((trabajo) => (
+                    <WorkCard
+                        key={trabajo.id}
+                        id={trabajo.id}
+                        nombre={trabajo.nombre}
+                        lazyImgUrl={trabajo.listaMedia[0] ? trabajo.listaMedia[0] : "No disp"}
+                        onSelect={(id) => navigate(`/trabajo/${id}`)}
+                        className={activeIndex === trabajo.id ? 'active' : ''}
+                    />
+                ))
+            )}
         </div>
+
     );
 };
 

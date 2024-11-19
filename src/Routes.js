@@ -6,14 +6,18 @@ import HomePage from './pages/HomePage';
 import CategoriasPage from './pages/CategoriasPage';
 import CategoriaDetailPage from './pages/CategoriaDetailPage';
 import TrabajoDetailPage from './pages/TrabajoDetailPage';
-import AboutPage from './pages/AboutPage'
+import AboutPage from './pages/AboutPage';
+import AdminPage from './pages/AdminPage';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-const AppRoutes = () => {
+
+const AppRoutes = ({config}) => {
     return (
         <Router>
             <Navbar /> {/* Barra de navegación global */}
+            
             <Routes>
                 {/* Ruta para la página de inicio */}
                 <Route path="/" element={<HomePage />} />
@@ -29,6 +33,9 @@ const AppRoutes = () => {
 
                 {/* Ruta para about */}
                 <Route path="/about" element={<AboutPage />} />
+
+                {/* Ruta para admin */}
+                <Route path="/admin" element={<AdminPage config={config} />} />
 
                 {/* Redireccionar a /home si no coincide con ninguna ruta */}
                 <Route path="*" element={<HomePage />} />

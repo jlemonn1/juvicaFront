@@ -1,4 +1,3 @@
-/* WorkCard.css */
 @keyframes fadeInScale {
     0% {
         opacity: 0;
@@ -10,48 +9,47 @@
     }
 }
 
-.work-card {
+.category-card {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 6;
     overflow: hidden;
     cursor: pointer;
+    transform: scale(0.93); /* Escala inicial para la animación */
     transition: transform 0.2s;
-    opacity: 0.9; /* Inicialmente oculta */
 }
 
-.work-card.visible {
-    animation: fadeInScale 0.6s ease-out forwards; /* Activa la animación */
-    opacity: 1; /* Aparece */
+.category-card.visible {
+    animation: fadeInScale 0.6s ease-out forwards;
 }
 
-.work-card:hover {
+.category-card:hover {
     transform: scale(1.05);
 }
 
-.work-image {
+.category-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.work-overlay {
+.category-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo inicial más claro */
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 1; /* Texto siempre visible */
+    transition: background-color 0.3s ease;
 }
 
-.work-card:hover .work-overlay {
-    opacity: 1;
+.category-card:hover .category-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro en hover */
 }

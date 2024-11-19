@@ -5,6 +5,8 @@
     color: white;
     text-align: center;
     padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     width: 100%;
     margin-top: auto; /* Empuja el footer al final del contenedor principal */
 }
@@ -36,4 +38,21 @@
 .footer-text {
     font-size: 14px;
     margin-top: 10px;
+}
+
+
+@media (min-width: 1024px) {
+    .icon {
+        color: white;
+        font-size: 38px;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+    
+    
+    .footer-text {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    
 }

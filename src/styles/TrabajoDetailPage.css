@@ -1,0 +1,107 @@
+.trabajo-detail-container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor */
+    background-color: #000000; /* Fondo negro */
+}
+
+.trabajo-image {
+    position: relative;
+    height: 200px; /* o el tamaño que necesites */
+    width: 100%;
+}
+
+.trabajo-image__title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 1.5em; /* Tamaño de fuente del título */
+    text-align: left;
+}
+
+.trabajo-details {
+    margin: 15px; /* Espaciado entre la imagen y los detalles */
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.trabajo-date {
+    font-weight: bold; /* Negrita para la fecha */
+    color: white; 
+}
+
+.trabajo-comment {
+    margin-top: 10px; /* Espacio entre la fecha y el comentario */
+    color: white; 
+}
+
+.trabajo-gallery {
+    display: flex; /* Disposición en línea */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan */
+    gap: 2px; /* Espacio entre las imágenes */
+    padding-left: 4px; /* Espaciado alrededor */
+    padding-right: 4px;
+}
+
+.trabajo-gallery__media img {
+   width: 100%;
+}
+
+.trabajo-gallery__media video {
+    width: 100%;
+ }
+
+.trabajo-gallery__img.fade-in,
+.trabajo-gallery__video.fade-in {
+    opacity: 1; /* Cuando son visibles, se muestran */
+}
+
+.trabajo-gallery__img.fade-out,
+.trabajo-gallery__video.fade-out {
+    opacity: 0; /* Se ocultan por defecto */
+}
+
+/* Estilos para el video */
+.trabajo-gallery__video {
+    object-fit: cover; /* Ajusta el video dentro de su contenedor sin distorsionar */
+    cursor: pointer; /* Cambia el cursor al pasar por encima para indicar que es interactivo */
+}
+
+
+
+
+/*SPinner de carga*/
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo traslúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Bordes semi-transparentes */
+    border-top: 5px solid white; /* Borde superior sólido */
+    border-radius: 50%; /* Forma de círculo */
+    animation: spin 1s linear infinite; /* Animación de giro */
+}
+
+/* Animación para el spinner */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,8 +1,8 @@
-// WorkCard.js
+// CategoryCard.js
 import React, { useRef, useState, useEffect } from 'react';
-import '../styles/WorkCard.css';
+import '../styles/CategoryCard.css';
 
-const WorkCard = ({ id, nombre, lazyImgUrl, onSelect, className }) => {
+const CategoryCard = ({ id, nombre, lazyImgUrl, onSelect, className }) => {
     const cardRef = useRef(null);
     const [imgSrc, setImgSrc] = useState('');
 
@@ -26,11 +26,11 @@ const WorkCard = ({ id, nombre, lazyImgUrl, onSelect, className }) => {
     };
 
     return (
-        <div ref={cardRef} className={`work-card ${className}`} onClick={handleClick}>
-            <img src={imgSrc} alt={nombre} className="work-image" />
-            <div className="work-overlay">{nombre}</div>
+        <div ref={cardRef} className={`category-card ${className}`} onClick={handleClick}>
+            <img src={imgSrc} alt={nombre} className="category-image" />
+            <div className="category-overlay">{nombre}</div>
         </div>
     );
 };
 
-export default WorkCard;
+export default CategoryCard;
