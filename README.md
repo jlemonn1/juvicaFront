@@ -1,4 +1,4 @@
-📘 Juvica - Frontend 🚀
+📸Juvica - Frontend 🚀
 ¡Hola! Bienvenid@ al frontend de Juvica. 🌟 He construido esta aplicación usando React, con una arquitectura moderna y componentes dinámicos que hacen que la experiencia de usuario sea fluida y divertida.
 
 🛠️ Tecnologías Utilizadas
@@ -6,15 +6,22 @@ React: La base de este proyecto. Componentes reutilizables, dinámicos y geniale
 React Router: Para la navegación entre páginas sin recargar el sitio.
 Context API: Manejo del estado global, porque trabajar con props para todo es cosa del pasado. 😉
 Configuración Dinámica: La apiUrl se puede configurar externamente para que sea flexible y adaptable. ¡Ideal para desarrollo y producción!
+
 🌐 Rutas de la Aplicación
 El proyecto tiene diferentes rutas que te llevan a las páginas principales de la app. Estas son:
 
 Ruta	Descripción
+
 /	Página de inicio con una introducción. ✨
+
 /categorias	Muestra una lista de categorías. 🗂️
+
 /categoria/:id	Detalles de una categoría específica, incluyendo trabajos relacionados. 🔍
+
 /trabajo/:id	Página de detalle de un trabajo. Aquí puedes ver imágenes, videos y comentarios. 🎥📸
+
 /about	Un poco más sobre el proyecto o el equipo detrás de esta app. 🤓
+
 /admin	Panel de administración para gestionar el contenido. Solo para los que tienen la llave maestra. 🔑
 Y si alguien se pierde por ahí, lo redireccionamos de vuelta al inicio. 😎
 
